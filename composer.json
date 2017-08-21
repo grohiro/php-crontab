@@ -1,0 +1,13 @@
+{
+    "name": "grohiro/php-crontab",
+    "description": "Manipulate crontab via PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "grohiro",
+            "email": "khirokawa@growk.jp"
+        }
+    ],
+    "require": {}
+}
