@@ -9,5 +9,16 @@
             "email": "khirokawa@growk.jp"
         }
     ],
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "~5.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "Grohiro\\Crontab\\": ["src/", "tests/"]
+      }
+    },
+    "scripts": {
+      "test": "phpunit --bootstrap tests/bootstrap.php tests/"
+    }
 }
