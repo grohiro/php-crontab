@@ -60,4 +60,17 @@ class CrontabTest extends TestCase
         $this->assertTrue($replaced);
         $this->assertEquals("MAILTO=crontab@example.com\n30 5 * * * ls -l /var/log #phpcrontab:1", $crontab->__toString());
     }
+
+    /**
+     * 
+     */
+    public function testUpdateOrCreateEntry()
+    {
+        $crontab = new Crontab();
+        $crontab->addNewEntry(1, "0 4 * * * ls -l /var/log");
+        $replaced = $crontab->updateEntry(2, "30 5 * * * ls -l /var/spool/mail");
+        $this->assertFalse($replaced);
+        $this->assertEquals("0 4 * * * ls -l /var/log #phpcrontab:1\n30 5 * * * ls -l /var/spool/mail #phpcrontab:2", $crontab->__toString());
+        
+    }
 }

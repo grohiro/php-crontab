@@ -1,7 +1,7 @@
 {
     "name": "grohiro/php-crontab",
     "description": "Manipulate crontab via PHP",
-    "version": "1.0",
+    "version": "1.1",
     "type": "library",
     "license": "MIT",
     "authors": [

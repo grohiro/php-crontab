@@ -39,6 +39,7 @@ class Crontab
 
     /**
      * Replace the entry found by `$key`.
+     * Append the entry if `$key` not found.
      */
     public function updateEntry($key, $newEntry)
     {
@@ -51,6 +52,9 @@ class Crontab
                 $this->crontab[$index] = $entryWithKey;
                 $replaced = true;
             }
+        }
+        if (!$replaced) {
+            $this->crontab[] = self::entryWithKey($key, $newEntry);
         }
 
         return $replaced;
