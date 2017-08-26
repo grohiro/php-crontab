@@ -7,6 +7,8 @@ namespace Grohiro\Crontab;
  */
 class Crontab
 {
+    public static $DEBUG;
+
     /**
      * @var array
      */
@@ -84,9 +86,21 @@ class Crontab
     }
 
     /**
-     *
+     * Save crontab
      */
     public function save()
+    {
+        if (self::$DEBUG !== true) {
+            $this->saveCrontab();
+        } else {
+            echo $this->__toString;
+        }
+    }
+
+    /**
+     * Save crontab
+     */
+    private function saveCrontab()
     {
         $out = null;
         try {
