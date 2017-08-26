@@ -1,6 +1,6 @@
 # php-crontab
 
-php-crontab manipulates crontab entry via PHP. You can use this library To add and update save crontab entries.
+php-crontab manipulates crontab entry via PHP. You can use this library to add and update, save crontab entries.
 
 ## Install
 
@@ -16,7 +16,7 @@ composer.json
     }
   ],
   "require": {
-    "grohiro/php-crontab": "master"
+    "grohiro/php-crontab": "~1.0"
   }
 }
 ```
