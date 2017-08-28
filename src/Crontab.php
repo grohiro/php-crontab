@@ -63,6 +63,24 @@ class Crontab
     }
 
     /**
+     * Remove the entry found by `$key`.
+     */
+    public function removeEntry($key)
+    {
+        $removed = false;
+
+        $regex = preg_quote(self::key($key));
+        foreach ($this->crontab as $index => $entry) {
+            if (preg_match("/$regex$/", $entry)) {
+                unset($this->crontab[$index]);
+                $removed = true;
+            }
+        }
+
+        return $removed;
+    }
+
+    /**
      *
      */
     public function entryWithKey($key, $entry)

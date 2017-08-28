@@ -73,4 +73,15 @@ class CrontabTest extends TestCase
         $this->assertEquals("0 4 * * * ls -l /var/log #phpcrontab:1\n30 5 * * * ls -l /var/spool/mail #phpcrontab:2", $crontab->__toString());
         
     }
+
+    /**
+     * Test removeEntry()
+     */
+    public function testRemoveEntry() {
+        $crontab = new Crontab();
+        $crontab->addNewEntry(1, "0 4 * * * ls -l /var/log");
+        $removed = $crontab->removeEntry(1);
+        $this->assertTrue($removed);
+        $this->assertEquals("", $crontab->__toString());
+    }
 }
