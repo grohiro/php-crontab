@@ -111,7 +111,7 @@ class Crontab
         if (self::$DEBUG !== true) {
             $this->saveCrontab();
         } else {
-            echo $this->__toString;
+            echo $this->__toString();
         }
     }
 
