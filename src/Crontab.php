@@ -130,7 +130,8 @@ class Crontab
                     break;
                 }
             }
-            fwrite($out, "");
+            fwrite($out, "\n");
+            fflush($out);
             pclose($out);
             return true;
         } catch (\Exception $ex) {
