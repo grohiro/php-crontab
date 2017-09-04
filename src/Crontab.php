@@ -129,7 +129,6 @@ class Crontab
                 if ($fwrite === false) {
                     break;
                 }
-                echo ".";
             }
             fwrite($out, "");
             pclose($out);
